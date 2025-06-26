@@ -1,7 +1,12 @@
 package car_factory;
 
 public abstract class FabricacionVehiculo {
+    private final Vehiculo vehiculo;
     private Etapa etapa = Etapa.RECEPCION_Y_CLASIFICACION;
+
+    public FabricacionVehiculo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
+    }
 
     public final void fabricarVehiculo() {
         while (etapa != Etapa.ENTREGA) {
@@ -15,29 +20,38 @@ public abstract class FabricacionVehiculo {
         switch (etapa) {
             case RECEPCION_Y_CLASIFICACION:
                 this.recepcionYClasificacion();
+                break;
 
             case CORTE_PIEZAS:
                 this.corteDePiezas();
+                break;
 
             case ENSAMBLADO_CHASIS_CARROCERIA:
                 this.ensambladoChasisCarroceria();
+                break;
 
             case PINTURA:
                 this.pintura();
+                break;
 
             case ENSAMBLE_PARTES_MECANICAS:
                 this.ensamblePartesMecanicas();
+                break;
 
             case TERMINACION_EXTERIORES:
                 this.terminacionExteriores();
+                break;
 
             case ACABADOS_INTERIORES:
                 this.acabadosInteriores();
+                break;
 
             case VERIFICACION:
                 this.verificacion();
+                break;
 
             default:
+                break;
         }
     }
 
@@ -51,6 +65,10 @@ public abstract class FabricacionVehiculo {
             etapaActual = Etapa.ENTREGA;
         }
         return etapaActual;
+    }
+
+    protected Vehiculo getVehiculo() {
+        return vehiculo;
     }
 
     protected abstract void recepcionYClasificacion();

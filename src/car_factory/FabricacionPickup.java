@@ -1,6 +1,10 @@
 package car_factory;
 
 public class FabricacionPickup extends FabricacionVehiculo {
+    public FabricacionPickup(Vehiculo vehiculo) {
+        super(vehiculo);
+    }
+
     @Override
     protected void recepcionYClasificacion() {
         System.out.println("Pick-up: Recepción y clasificación de piezas.");

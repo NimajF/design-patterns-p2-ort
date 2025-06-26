@@ -2,6 +2,10 @@ package car_factory;
 
 public class FabricacionCoche extends FabricacionVehiculo {
 
+    public FabricacionCoche(Vehiculo vehiculo) {
+        super(vehiculo);
+    }
+
     @Override
     protected void recepcionYClasificacion() {
         System.out.println("Coche: Recepción y clasificación de piezas estándares.");
