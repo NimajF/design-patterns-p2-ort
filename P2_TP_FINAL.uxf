@@ -99,4 +99,93 @@ m1=*</panel_attributes><additional_attributes>10;20;190;20</additional_attribute
 --
 + notificar(Pedido): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1001</x><y>644</y><w>21</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>350</y><w>133</w><h>35</h></coordinates><panel_attributes>lt=&lt;-
 - procesoFabricacion
-m1=1</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1022</x><y>70</y><w>21</w><h>273</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;370;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1001</x><y>455</y><w>21</w><h>154</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;200;10;10</additional_attributes></element></diagram>
+m1=1</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1022</x><y>70</y><w>21</w><h>273</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;370;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1001</x><y>455</y><w>21</w><h>154</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;200;10;10</additional_attributes></element>
+Etapa
+--
+_+ RECEPCION_Y_CLASIFICACION_
+_+ CORTE_PIEZAS_
+_+ ENSAMBLADO_CHASIS_CARROCERIA_
+_+ PINTURA_
+_+ ENSAMBLE_PARTES_MECANICAS_
+_+ TERMINACION_EXTERIORES_
+_+ ACABADOS_INTERIORES_
+_+ VERIFICACION_
+_+ ENTREGA_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+
+  <!-- Clase abstracta con Template Method -->
+  <element>
+    <id>UMLClass</id>
+    <coordinates><x>200</x><y>50</y><w>200</w><h>300</h></coordinates>
+    <panel_attributes>/FabricacionVehiculo/
+--
+- etapa: Etapa
+--
++ fabricarVehiculo(): void
+- ejecutarEtapa(e: Etapa): void
+- siguienteEtapa(e: Etapa): Etapa
+# recepcionYClasificacion(): void
+# corteDePiezas(): void
+# ensambladoChasisCarroceria(): void
+# pintura(): void
+# ensamblePartesMecanicas(): void
+# terminacionExteriores(): void
+# acabadosInteriores(): void
+# verificacion(): void
+# entrega(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+
+  <!-- Subclase Coche -->
+  <element>
+    <id>UMLClass</id>
+    <coordinates><x>450</x><y>80</y><w>180</w><h>200</h></coordinates>
+    <panel_attributes>FabricacionCoche
+--
++ recepcionYClasificacion(): void
++ corteDePiezas(): void
++ ensambladoChasisCarroceria(): void
++ pintura(): void
++ ensamblePartesMecanicas(): void
++ terminacionExteriores(): void
++ acabadosInteriores(): void
++ verificacion(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+
+  <!-- Subclase Pickup -->
+  <element>
+    <id>UMLClass</id>
+    <coordinates><x>450</x><y>310</y><w>180</w><h>200</h></coordinates>
+    <panel_attributes>FabricacionPickup
+--
++ recepcionYClasificacion(): void
++ corteDePiezas(): void
++ ensambladoChasisCarroceria(): void
++ pintura(): void
++ ensamblePartesMecanicas(): void
++ terminacionExteriores(): void
++ acabadosInteriores(): void
++ verificacion(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+
+  <!-- Relaciones de herencia -->
+  <element>
+    <id>Relation</id>
+    <coordinates><x>380</x><y>200</y><w>100</w><h>20</h></coordinates>
+    <panel_attributes>lt=&lt;&lt;|--</panel_attributes>
+    <additional_attributes>FabricacionVehiculo;FabricacionCoche</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates><x>380</x><y>430</y><w>100</w><h>20</h></coordinates>
+    <panel_attributes>lt=&lt;&lt;|--</panel_attributes>
+    <additional_attributes>FabricacionVehiculo;FabricacionPickup</additional_attributes>
+  </element>
+</diagram>
