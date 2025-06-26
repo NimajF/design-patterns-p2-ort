@@ -1,0 +1,102 @@
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><element><id>UMLClass</id><coordinates><x>469</x><y>301</y><w>147</w><h>133</h></coordinates><panel_attributes>/Vehiculo/
+--
+- precioBase: double
+- descripcion: String
+--
++ calcularPrecioTotal(): double
++ detalleCompleto: String
++ fabricar(): void
+ </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>378</x><y>504</y><w>147</w><h>133</h></coordinates><panel_attributes>Auto
+--
+
+--
+ </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>504</y><w>147</w><h>133</h></coordinates><panel_attributes>Camioneta
+--
+
+--
+ </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>546</x><y>427</y><w>105</w><h>91</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;130;110</additional_attributes></element><element><id>Relation</id><coordinates><x>448</x><y>427</y><w>105</w><h>91</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>130;10;10;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>231</x><y>532</y><w>56</w><h>84</h></coordinates><panel_attributes>&lt;&lt;enum&gt;
+ModeloAuto
+--
+_+ MONDEO_
+_+ FOCUS_
+_+ KA_
+ </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>560</y><w>112</w><h>35</h></coordinates><panel_attributes>lt=&lt;-
+- modelo
+m1=1</panel_attributes><additional_attributes>10;20;140;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>798</x><y>546</y><w>91</w><h>56</h></coordinates><panel_attributes>&lt;&lt;enum&gt;
+ModeloCamioneta
+--
+_+ RANGER_
+_+ F150_RAPTOR_
+ </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>700</x><y>560</y><w>112</w><h>35</h></coordinates><panel_attributes>lt=&lt;-
+- modelo
+m1=1</panel_attributes><additional_attributes>140;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1344</x><y>329</y><w>147</w><h>133</h></coordinates><panel_attributes>Cliente
+--
+- nombre: String
+- apellido: String
+- direccion: String
+- dni: int
+- email: int
+- tel: int
+- contraseña: String
+- recibePromociones: boolean
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>686</x><y>322</y><w>112</w><h>77</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+Adicional
+--
+_+ AIRE_ACONDICIONADO_
+_+ MP3_
+_+ LLANTAS_ALEACION_
+_+ ALARMA_
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>609</x><y>350</y><w>91</w><h>35</h></coordinates><panel_attributes>lt=&lt;-
+- adicionales
+m1=*</panel_attributes><additional_attributes>110;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1169</x><y>329</y><w>147</w><h>133</h></coordinates><panel_attributes>Operario
+--
+- email: String
+- contraseña: String
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1148</x><y>98</y><w>210</w><h>133</h></coordinates><panel_attributes>Sistema
+--
+
+--
++ loginCliente(email, contraseña): Cliente
++ loginOperario(email, contraseña): Operario</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>994</x><y>329</y><w>147</w><h>133</h></coordinates><panel_attributes>Pedido
+--
+- confirmado: boolean
+- notificarPorMail: boolean
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1351</x><y>154</y><w>140</w><h>189</h></coordinates><panel_attributes>lt=&lt;-
+- clientesActivos
+m1=*</panel_attributes><additional_attributes>90;250;90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1239</x><y>224</y><w>63</w><h>119</h></coordinates><panel_attributes>lt=&lt;-
+- operarios
+m1=*</panel_attributes><additional_attributes>10;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1057</x><y>154</y><w>105</w><h>189</h></coordinates><panel_attributes>lt=&lt;-
+- pedidos
+m1=*</panel_attributes><additional_attributes>10;250;10;10;130;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1057</x><y>455</y><w>385</w><h>84</h></coordinates><panel_attributes>lt=&lt;-
+- cliente
+m1=1</panel_attributes><additional_attributes>520;10;520;100;10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>532</x><y>231</y><w>476</w><h>182</h></coordinates><panel_attributes>lt=&lt;-
+- vehiculo
+m1=1</panel_attributes><additional_attributes>10;100;10;20;540;20;540;240;660;240</additional_attributes></element><element><id>Relation</id><coordinates><x>1092</x><y>455</y><w>182</w><h>49</h></coordinates><panel_attributes>lt=&lt;-
+- operarioResponsable
+m1=1</panel_attributes><additional_attributes>230;10;230;50;10;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>343</y><w>112</w><h>56</h></coordinates><panel_attributes>/EtapaFabricacion/
+--
+- nombre: String
+--
++ ejecutar(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>238</x><y>329</y><w>119</w><h>84</h></coordinates><panel_attributes>ProcesoFabricacion 
+--
+- etapaActual: int
+--
++ estadoActual()_ String
++ estaFinalizado(): boolean
++ avanzarEtapa(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>105</x><y>357</y><w>147</w><h>35</h></coordinates><panel_attributes>lt=&lt;-
+- etapasFabricacion
+m1=*</panel_attributes><additional_attributes>10;20;190;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>952</x><y>0</y><w>154</w><h>77</h></coordinates><panel_attributes>Gerente
+--
+
+--
++ verEstadoGeneral(pedidos): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>938</x><y>595</y><w>140</w><h>56</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+/Observador/
+--
+--
++ notificar(Pedido): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>938</x><y>700</y><w>140</w><h>56</h></coordinates><panel_attributes>NotificadorMail
+--
+--
++ notificar(Pedido): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1001</x><y>644</y><w>21</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>350</y><w>133</w><h>35</h></coordinates><panel_attributes>lt=&lt;-
+- procesoFabricacion
+m1=1</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1022</x><y>70</y><w>21</w><h>273</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;370;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1001</x><y>455</y><w>21</w><h>154</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;200;10;10</additional_attributes></element></diagram>
